@@ -51,7 +51,7 @@ export default function Navbar() {
             {/* <div className="w-8 h-8 sm:w-9 sm:h-9 bg-blue-600 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-lg">
               <span className="text-white font-bold text-xs sm:text-sm">D</span>
             </div> */}
-            <Image src="/directlogo.png" className="mx-0" width="55" height="55"/>
+            <Image src="/directlogo.png" alt="logo" className="mx-0" width="55" height="55"/>
             <span className="text-gray-800 tracking-tight hidden xs:block">
               DirectNaukri
             </span>
