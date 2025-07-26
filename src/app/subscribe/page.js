@@ -25,7 +25,7 @@ export default function SubscribePage() {
       }
     };
     fetchUser();
-  }, []);
+  }, [router]);
 
 const handlePayment = async () => {
   const res = await fetch("/api/razorpay", { method: "POST" });
