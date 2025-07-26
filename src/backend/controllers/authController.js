@@ -2,8 +2,8 @@ import { connectDB } from "../lib/db";
 import User from "../models/User";
 import bcrypt from "bcryptjs";
 import { generateToken } from "../utils/generateToken";
-import { sendOTP } from "../utils/sendOTP";
-import {verifyOTP} from "../utils/verifyToken";
+// import { sendOTP } from "../utils/sendOTP";
+// import {verifyOTP} from "../utils/verifyToken";
 import { NextResponse } from "next/server";
 
 // ========== Register with Email ==========
@@ -39,38 +39,7 @@ export async function login(req) {
 }
 
 // ========== Send OTP to Phone ==========
-export async function sendOtpHandler(req) {
-  await connectDB();
-  const { phone } = await req.json();
 
-  const otp = await sendOTP(phone); // generated & stored in memory
-  console.log(`OTP sent to ${phone}: ${otp}`); // log or integrate SMS here
-
-  return NextResponse.json({ success: true, message: "OTP sent" });
-}
 
 // ========== Verify OTP & Login/Register ==========
-export async function verifyOtpHandler(req) {
-  await connectDB();
-  const { phone, otp } = await req.json();
 
-  const valid = await verifyOTP(phone, otp);
-  if (!valid) {
-    return NextResponse.json({ success: false, message: "Invalid OTP" }, { status: 401 });
-  }
-
-  // Find or create user
-  let user = await User.findOne({ phone });
-  if (!user) user = await User.create({ phone });
-
-  const token = generateToken(user._id);
-  const res = NextResponse.json({ success: true, user });
-  res.cookies.set("token", token, {
-    httpOnly: true,
-    secure: true,
-    path: "/",
-    maxAge: 60 * 60 * 24 * 365, // 1 year
-  });
-
-  return res;
-}

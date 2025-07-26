@@ -340,7 +340,7 @@ const About = () => {
                 Your Career?
               </h2>
               <p className="text-lg sm:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-                Join thousands of professionals who've discovered exceptional
+                Join thousands of professionals who&rsquo;ve discovered exceptional
                 opportunities through direct connections with industry leaders
               </p>
               <Link href="/jobs">
