@@ -1,13 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import {  useRouter } from "next/navigation";
 import Link from "next/link";
 
 
 export default function SubscribePage() {
   const router = useRouter();
-  const params = useSearchParams();
-  const jobId = params.get("job");
+
     const [user, setUser] = useState(null);
 
   const [loading, setLoading] = useState(false);
