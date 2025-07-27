@@ -226,7 +226,7 @@ export default function JobDetails() {
                       href={`/subscribe?job=${job._id}`}
                       className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200"
                     >
-                      Upgrade to Premium
+                    See Full Job + Support - ₹99
                       <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -311,7 +311,7 @@ export default function JobDetails() {
                       </svg>
                     </div>
                     <h3 className="text-xl font-bold mb-2">Premium Access</h3>
-                    <p className="text-gray-300">Unlock all job opportunities</p>
+                    <p className="text-gray-300">Unlock all jobs details</p>
                   </div>
 
                   <div className="space-y-3 mb-6">

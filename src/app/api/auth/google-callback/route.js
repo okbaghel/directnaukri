@@ -69,7 +69,7 @@ const oauth2Client = new google.auth.OAuth2(
 
     // ✅ 5. Redirect user to homepage or dashboard
    const redirectOrigin = `${url.protocol}//${url.host}`;
-return NextResponse.redirect(`${redirectOrigin}/jobs`);
+return NextResponse.redirect(`${redirectOrigin}/jobs?login=success`);
 // Change in production
   } catch (error) {
     console.error("OAuth error:", error);

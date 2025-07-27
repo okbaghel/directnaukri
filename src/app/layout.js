@@ -1,6 +1,8 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { UserProvider } from "@/app/context/userContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   title: "DirectNaukri",
@@ -10,7 +12,7 @@ export const metadata = {
     "field staff hiring", "job portal India"
   ],
   openGraph: {
-    title: "DirectNaukri – Manpower Jobs Across India",
+    title: "DirectNaukri – Jobs Across India",
     description: "India’s trusted platform to find and hire delivery and logistics manpower.",
     siteName: "DirectNaukri",
     type: "website",
@@ -35,6 +37,7 @@ export default function RootLayout({ children }) {
         <UserProvider>
           <Navbar />
           {children}
+          <ToastContainer position="top-right" autoClose={3000} />
         </UserProvider>
       </body>
     </html>

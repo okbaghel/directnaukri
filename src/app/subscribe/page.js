@@ -11,6 +11,95 @@ export default function SubscribePage() {
 
   const [loading, setLoading] = useState(false);
 
+  function showSuccessAlert() {
+  const alertHTML = `
+    <div id="alertOverlay" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 transition-all duration-300 ease-out">
+      <div class="bg-white rounded-2xl p-8 text-center max-w-md w-11/12 mx-4 transform scale-75 transition-all duration-300 ease-out shadow-2xl">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-3">Payment Successful! 🎉</h2>
+        <p class="text-gray-600 mb-2 text-lg font-medium">Congratulations! You now have premium access.</p>
+        <p class="text-gray-500 mb-6 text-sm">You can now get all jobs HR contacts and apply directly!</p>
+        <button 
+          onclick="closeAlert()" 
+          class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-6 rounded-xl font-semibold text-lg hover:from-green-600 hover:to-green-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+        >
+          Access Jobs Now →
+        </button>
+      </div>
+    </div>
+  `;
+  
+  document.body.insertAdjacentHTML('beforeend', alertHTML);
+  const overlay = document.getElementById('alertOverlay');
+  
+  // Trigger animation
+  setTimeout(() => {
+    overlay.classList.remove('opacity-0');
+    overlay.classList.add('opacity-100');
+    overlay.querySelector('div').classList.remove('scale-75');
+    overlay.querySelector('div').classList.add('scale-100');
+  }, 10);
+}
+
+function showErrorAlert() {
+  const alertHTML = `
+    <div id="alertOverlay" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 opacity-0 transition-all duration-300 ease-out">
+      <div class="bg-white rounded-2xl p-8 text-center max-w-md w-11/12 mx-4 transform scale-75 transition-all duration-300 ease-out shadow-2xl">
+        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+          <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-3">Payment Verification Failed</h2>
+        <p class="text-gray-600 mb-6">There was an issue processing your payment. Please try again or contact support.</p>
+        <div class="flex gap-3">
+          <button 
+            onclick="closeAlert()" 
+            class="flex-1 bg-gray-100 text-gray-700 py-3 px-4 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-200"
+          >
+            Close
+          </button>
+          <button 
+            onclick="closeAlert(); location.reload();" 
+            class="flex-1 bg-gradient-to-r from-red-500 to-red-600 text-white py-3 px-4 rounded-xl font-semibold hover:from-red-600 hover:to-red-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.body.insertAdjacentHTML('beforeend', alertHTML);
+  const overlay = document.getElementById('alertOverlay');
+  
+  // Trigger animation
+  setTimeout(() => {
+    overlay.classList.remove('opacity-0');
+    overlay.classList.add('opacity-100');
+    overlay.querySelector('div').classList.remove('scale-75');
+    overlay.querySelector('div').classList.add('scale-100');
+  }, 10);
+}
+
+function closeAlert() {
+  const overlay = document.getElementById('alertOverlay');
+  if (overlay) {
+    overlay.classList.remove('opacity-100');
+    overlay.classList.add('opacity-0');
+    overlay.querySelector('div').classList.remove('scale-100');
+    overlay.querySelector('div').classList.add('scale-75');
+    
+    setTimeout(() => {
+      overlay.remove();
+    }, 300);
+  }
+}
+
     useEffect(() => {
     const fetchUser = async () => {
       const res = await fetch("/api/me");
@@ -45,13 +134,20 @@ const handlePayment = async () => {
         body: JSON.stringify(response),
       });
 
-      const result = await verifyRes.json();
-      if (result.success) {
-        alert("Payment successful! 🎉");
-        location.href = "/jobs";
-      } else {
-        alert("Verification failed.");
-      }
+    const result = await verifyRes.json();
+if (result.success) {
+  showSuccessAlert();
+  
+  // Redirect after user closes alert or automatically after 3 seconds
+  setTimeout(() => {
+    if (document.getElementById('alertOverlay')) {
+      closeAlert();
+    }
+    router.push("/jobs"); // Use Next.js router instead of location.href
+  }, 3000);
+} else {
+  showErrorAlert();
+}
     },
     prefill: {
       name: "DirectNaukri",
@@ -149,7 +245,7 @@ const handlePayment = async () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                       </svg>
                     </div>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Premium Access</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Get HR Direct Contact</h2>
                     <div className="flex items-center justify-center mb-2">
                       <span className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900">₹99</span>
                       <div className="ml-3 text-left">

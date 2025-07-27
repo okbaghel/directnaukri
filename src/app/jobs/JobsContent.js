@@ -3,15 +3,24 @@
 import { useEffect, useState } from "react";
 import JobCard from "@/components/JobCard";
 import { useSearchParams } from "next/navigation";
+import { toast } from "react-toastify";
+
 
 export default function JobsContent() {
   const searchParams = useSearchParams();
   const titleQuery = searchParams.get("title")?.toLowerCase() || "";
   const locationQuery = searchParams.get("location")?.toLowerCase() || "";
+  const loginStatus = searchParams.get("login");
 
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+
+    useEffect(() => {
+    if (loginStatus === "success") {
+      toast.success("Successfully Logged In!");
+    }
+  }, [loginStatus]);
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -22,6 +31,7 @@ export default function JobsContent() {
         const data = await res.json();
         setJobs(data);
         setFilteredJobs(data);
+         
       } catch (err) {
         console.error(err);
       }
