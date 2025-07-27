@@ -6,10 +6,10 @@ import User from "@/backend/models/User";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 
-export async function GET(req) {
+export async function GET(request) {
   await connectDB(); // ✅ Ensure DB connected
 
-  const url = new URL(req.url);
+  const url = new URL(request.url);
   const code = url.searchParams.get("code");
 
   if (!code) {

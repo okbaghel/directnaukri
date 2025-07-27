@@ -2,8 +2,8 @@
 import { google } from "googleapis";
 import { NextResponse } from "next/server";
 
-export async function GET() {
-  const redirectUri = `${req.nextUrl.origin}/api/auth/google-callback`;
+export async function GET(request) {
+  const redirectUri = `${request.nextUrl.origin}/api/auth/google-callback`;
 
   const oauth2Client = new google.auth.OAuth2(
     process.env.GOOGLE_CLIENT_ID,
