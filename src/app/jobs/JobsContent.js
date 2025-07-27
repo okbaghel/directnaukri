@@ -16,9 +16,8 @@ export default function JobsContent() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/jobs`, {
-          cache: "no-store",
-        });
+        const res = await fetch(`/api/jobs`, { cache: "no-store" });
+
         if (!res.ok) throw new Error("Failed to fetch jobs");
         const data = await res.json();
         setJobs(data);
@@ -94,9 +93,7 @@ export default function JobsContent() {
             <p className="text-gray-500 mb-6">
               Try a different keyword or check back later.
             </p>
-            <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
-              Get Notified
-            </button>
+           
           </div>
         </div>
       )}

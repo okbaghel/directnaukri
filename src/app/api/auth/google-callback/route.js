@@ -16,11 +16,15 @@ export async function GET(req) {
     return NextResponse.json({ error: "No code provided" }, { status: 400 });
   }
 
-  const oauth2Client = new google.auth.OAuth2(
-    process.env.GOOGLE_CLIENT_ID,
-    process.env.GOOGLE_CLIENT_SECRET,
-    process.env.GOOGLE_REDIRECT_URI
-  );
+
+const origin = `${url.protocol}//${url.host}`;
+
+const oauth2Client = new google.auth.OAuth2(
+  process.env.GOOGLE_CLIENT_ID,
+  process.env.GOOGLE_CLIENT_SECRET,
+  `${origin}/api/auth/google-callback` // Dynamic!
+);
+
 
   try {
     const { tokens } = await oauth2Client.getToken(code);
@@ -63,7 +67,9 @@ export async function GET(req) {
     });
 
     // ✅ 5. Redirect user to homepage or dashboard
-    return NextResponse.redirect("http://localhost:3000/jobs"); // Change in production
+   const redirectOrigin = `${url.protocol}//${url.host}`;
+return NextResponse.redirect(`${redirectOrigin}/jobs`);
+// Change in production
   } catch (error) {
     console.error("OAuth error:", error);
     return NextResponse.json({ error: "OAuth failed" }, { status: 500 });
