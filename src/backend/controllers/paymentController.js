@@ -14,7 +14,7 @@ export const razorpay = new Razorpay({
 // ✅ Create Razorpay Order
 export async function createRazorpayOrder() {
   const options = {
-    amount: 9900, // ₹99 in paise
+    amount: 900, // ₹99 in paise
     currency: "INR",
     receipt: `receipt_${Date.now()}`,
     payment_capture: 1,
