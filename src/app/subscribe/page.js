@@ -157,7 +157,7 @@ const handlePayment = async () => {
                         <div className="text-green-600 text-xs sm:text-sm font-medium">Save 60%</div>
                       </div>
                     </div>
-                    <p className="text-slate-600 text-sm sm:text-base">One-time payment • Full year access • No hidden fees</p>
+                    <p className="text-slate-600 text-sm sm:text-base">One-time payment • Full month access • No hidden fees</p>
                   </div>
 
                   {/* Features - Shown on mobile */}

@@ -143,9 +143,7 @@ export default function Navbar() {
             <Link href="/jobs" onClick={() => setIsOpen(false)} className="block px-4 py-3 text-gray-600 hover:text-blue-600 hover:bg-gray-50 font-medium transition-all duration-200 rounded-lg">
               Jobs
             </Link>
-            <Link href="/companies" onClick={() => setIsOpen(false)} className="block px-4 py-3 text-gray-600 hover:text-blue-600 hover:bg-gray-50 font-medium transition-all duration-200 rounded-lg">
-              Companies
-            </Link>
+         
             <Link href="/about" onClick={() => setIsOpen(false)} className="block px-4 py-3 text-gray-600 hover:text-blue-600 hover:bg-gray-50 font-medium transition-all duration-200 rounded-lg">
               About
             </Link>
