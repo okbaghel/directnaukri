@@ -150,15 +150,7 @@ export default function AdminDashboard() {
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">Job Management</h1>
               <p className="text-sm sm:text-base text-gray-600">Manage and oversee all job listings</p>
             </div>
-            <button
-              onClick={() => setShowForm(!showForm)}
-              className="inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 w-full sm:w-auto"
-            >
-              <svg className="h-4 w-4 sm:h-5 sm:w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-              </svg>
-              {showForm ? 'Cancel' : 'Add New Job'}
-            </button>
+            
           </div>
         </div>
 
@@ -186,75 +178,7 @@ export default function AdminDashboard() {
         )}
 
         {/* Add Job Form */}
-        {showForm && (
-          <div className="mb-6 sm:mb-8">
-            <div className="bg-white shadow-sm rounded-lg border border-gray-200 mx-1 sm:mx-0">
-              <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200">
-                <h2 className="text-lg sm:text-xl font-semibold text-gray-900">Add New Job</h2>
-                <p className="text-xs sm:text-sm text-gray-600 mt-1">Fill in the details to create a new job listing</p>
-              </div>
-              <form onSubmit={handleSubmit} className="p-4 sm:p-6">
-                <div className="space-y-4 sm:space-y-6">
-                  {Object.entries(fieldLabels).map(([field, label]) => (
-                    <div key={field}>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {label} <span className="text-red-500">*</span>
-                      </label>
-                      {field === 'description' ? (
-                        <textarea
-                          required
-                          placeholder={`Enter ${label.toLowerCase()}`}
-                          value={form[field]}
-                          onChange={(e) => setForm({ ...form, [field]: e.target.value })}
-                          className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-none text-sm sm:text-base"
-                          rows="3"
-                          disabled={isSubmitting}
-                        />
-                      ) : (
-                        <input
-                          type={field === 'salary' ? 'number' : field === 'contact' ? 'email' : 'text'}
-                          required
-                          placeholder={`Enter ${label.toLowerCase()}`}
-                          value={form[field]}
-                          onChange={(e) => setForm({ ...form, [field]: e.target.value })}
-                          className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm sm:text-base"
-                          disabled={isSubmitting}
-                        />
-                      )}
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center text-sm sm:text-base w-full sm:w-auto"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <svg className="animate-spin -ml-1 mr-3 h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Adding Job...
-                      </>
-                    ) : (
-                      "Add Job"
-                    )}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setShowForm(false)}
-                    className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-colors duration-200 text-sm sm:text-base w-full sm:w-auto"
-                    disabled={isSubmitting}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        )}
+      
 
         {/* Jobs List */}
         <div className="bg-white shadow-sm rounded-lg border border-gray-200 mx-1 sm:mx-0">
@@ -273,7 +197,7 @@ export default function AdminDashboard() {
                     placeholder="Search jobs..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full sm:w-64 pl-9 sm:pl-10 pr-3 sm:pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm sm:text-base"
+                    className="w-full text-black sm:w-64 pl-9 sm:pl-10 pr-3 sm:pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 text-sm sm:text-base"
                   />
                   <div className="absolute inset-y-0 left-0 pl-2 sm:pl-3 flex items-center pointer-events-none">
                     <svg className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

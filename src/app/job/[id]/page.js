@@ -271,36 +271,80 @@ export default function JobDetails() {
 
             {/* HR Contact / Subscription Card */}
             {isPaidUser ? (
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-                <div className="p-6">
-                  <div className="flex items-center space-x-2 mb-4">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                      <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900">HR Contact</h4>
-                  </div>
-                  
-                  {job.contact ? (
-                    <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                      <p className="text-gray-700 font-medium break-all">
-                        {job.contact}
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
-                      <p className="text-yellow-800 text-sm">
-                        HR contact information will be updated soon. Please check back later.
-                      </p>
-                    </div>
-                  )}
-                  
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors duration-200">
-                    Apply Now
-                  </button>
-                </div>
-              </div>
+             <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 md:p-8 w-full">
+  {/* Header */}
+  <div className="flex items-center space-x-3 mb-4">
+    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+      <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <h4 className="text-xl font-semibold text-gray-900">HR Contact Details</h4>
+  </div>
+
+  {/* Contact Info */}
+  {job.contact ? (
+    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+      <div className="space-y-2">
+        <p className="text-gray-700 font-medium break-words">
+          <span className="font-semibold">Phone:</span> {job.contact}
+        </p>
+        {job.hrtiming && (
+          <p className="text-gray-600 text-sm">
+            <span className="font-semibold">Available:</span> {job.hrtiming}
+          </p>
+        )}
+
+        {/* Call Now Button */}
+        <a
+          href={`tel:${job.contact}`}
+          className="block w-full sm:w-auto text-center bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg font-semibold transition-all duration-200 mt-2"
+        >
+          📞 Call Now
+        </a>
+      </div>
+    </div>
+  ) : (
+    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+      <p className="text-yellow-800 text-sm">
+        HR contact information will be updated soon. Please check back later.
+      </p>
+    </div>
+  )}
+
+  {/* Application Button */}
+  <button className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-200">
+    Apply Now
+  </button>
+
+  {/* Guidance Section */}
+ <div className="mt-6 bg-slate-50 border border-slate-200 p-6 rounded-lg shadow-sm">
+  <h5 className="text-lg font-semibold text-slate-900 mb-4 flex items-center">
+    <span className="mr-2">💼</span>
+    Professional Communication Guidelines for HR
+  </h5>
+  <ul className="space-y-3 text-slate-700">
+    <li className="flex items-start">
+      <span className="inline-block w-2 h-2 bg-slate-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+      <span><strong>Opening:</strong> Begin with a courteous greeting: "Good morning, I came across your [job role] position on DirectNaukri platform."</span>
+    </li>
+    <li className="flex items-start">
+      <span className="inline-block w-2 h-2 bg-slate-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+      <span><strong>Introduction:</strong> Present yourself professionally with relevant qualifications and experience.</span>
+    </li>
+    <li className="flex items-start">
+      <span className="inline-block w-2 h-2 bg-slate-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+      <span><strong>Tone:</strong> Maintain a respectful and confident demeanor throughout the conversation.</span>
+    </li>
+    <li className="flex items-start">
+      <span className="inline-block w-2 h-2 bg-slate-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+      <span><strong>Closing:</strong> Express gratitude: "Thank you for taking the time to speak with me."</span>
+    </li>
+  </ul>
+</div>
+</div>
+
+
             ) : (
               <div className="bg-gradient-to-br from-gray-900 to-black text-white rounded-lg shadow-xl">
                 <div className="p-6">

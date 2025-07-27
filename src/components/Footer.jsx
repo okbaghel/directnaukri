@@ -2,9 +2,7 @@
 
 import Link from 'next/link';
 import {
-  Facebook,
-  Twitter,
-  Linkedin,
+
   Instagram,
 } from 'lucide-react';
 
@@ -52,22 +50,22 @@ const Footer = () => {
           <h3 className="text-white font-semibold mb-3">Resources</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              <Link href="/" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="/terms" className="hover:text-white transition-colors">
+              <Link href="/" className="hover:text-white transition-colors">
                 Terms & Conditions
               </Link>
             </li>
             <li>
-              <Link href="/faq" className="hover:text-white transition-colors">
+              <Link href="/" className="hover:text-white transition-colors">
                 FAQs
               </Link>
             </li>
             <li>
-              <Link href="/support" className="hover:text-white transition-colors">
+              <Link href="/" className="hover:text-white transition-colors">
                 Support
               </Link>
             </li>
@@ -84,38 +82,17 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-2">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              <Facebook size={20} />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              <Twitter size={20} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              <Linkedin size={20} />
-            </a>
-            <a
-              href="https://instagram.com"
+           
+            
+            
+            <Link
+              href="https://www.instagram.com/directnaukri.in?utm_source=qr&igsh=c2VucjdoeG1ubDYy"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition-colors"
             >
               <Instagram size={20} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

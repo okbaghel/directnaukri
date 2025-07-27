@@ -9,6 +9,7 @@ const jobSchema = new mongoose.Schema(
     description: String,
     contact: String,
     timing: String,
+    hrtiming:String,
     gender: String,
     qualification: String,
     experience: String,

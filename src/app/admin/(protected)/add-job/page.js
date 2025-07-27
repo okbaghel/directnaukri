@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 export default function AddJobPage() {
   const router = useRouter();
@@ -9,6 +10,7 @@ export default function AddJobPage() {
     company: "",
     location: "",
     timing: "",
+    hrtiming:"",
     gender: "",
     qualification: "",
     experience: "",
@@ -51,11 +53,13 @@ export default function AddJobPage() {
 
       if (res.ok) {
         setSuccess("Job added successfully!");
+        toast.success("New Job added successfully");
         setForm({
           title: "",
           company: "",
           location: "",
           timing: "",
+          hrtiming:"",
           gender: "",
           qualification: "",
           experience: "",
@@ -67,6 +71,7 @@ export default function AddJobPage() {
       } else {
         const errorData = await res.json();
         setError(errorData.message || "Failed to add job. Please try again.");
+        toast.error("Failed to add job");
       }
     } catch (err) {
       setError("Network error. Please check your connection and try again.");
@@ -80,6 +85,7 @@ export default function AddJobPage() {
     company: "Company Name",
     location: "Location",
     timing: "Work Timing",
+    hrtiming:"HR Contact Timing",
     gender: "Gender Preference",
     qualification: "Required Qualification",
     experience: "Experience Required",
@@ -291,6 +297,27 @@ export default function AddJobPage() {
                           placeholder="Email or phone"
                           value={form.contact}
                           onChange={(e) => setForm({ ...form, contact: e.target.value })}
+                          className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-gray-900 text-sm sm:text-base"
+                          disabled={isLoading}
+                        />
+                        <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+                          {fieldIcons.contact}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* hr contact timing  */}
+                     <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        {fieldLabels.hrtiming} <span className="text-red-500">*</span>
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          required
+                          placeholder="9-5pm "
+                          value={form.hrtiming}
+                          onChange={(e) => setForm({ ...form, hrtiming: e.target.value })}
                           className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-gray-900 text-sm sm:text-base"
                           disabled={isLoading}
                         />

@@ -24,7 +24,7 @@ export default function AdminLayout({ children }) {
   const navigationItems = [
     { href: "/admin/dashboard", label: "Dashboard", icon: "📊" },
     { href: "/admin/add-job", label: "Add Job", icon: "➕" },
-    
+    { href: "/admin/feedbacks", label: "Feedback", icon: "💬" }, 
     { href: "/admin/users", label: "Users", icon: "👥" },
   ];
 

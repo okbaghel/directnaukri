@@ -144,7 +144,7 @@ if (result.success) {
       closeAlert();
     }
     router.push("/jobs"); // Use Next.js router instead of location.href
-  }, 6000);
+  }, 5000);
 } else {
   showErrorAlert();
 }

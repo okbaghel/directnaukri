@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import { UserProvider } from "@/app/context/userContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Chatbot from '@/components/Chatbot';
 
 export const metadata = {
   title: "DirectNaukri",
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           <ToastContainer position="top-right" autoClose={3000} />
+          <Chatbot/>
         </UserProvider>
       </body>
     </html>
