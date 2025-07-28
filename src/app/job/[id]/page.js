@@ -313,9 +313,7 @@ export default function JobDetails() {
   )}
 
   {/* Application Button */}
-  <button className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-200">
-    Apply Now
-  </button>
+  
 
   {/* Guidance Section */}
  <div className="mt-6 bg-slate-50 border border-slate-200 p-6 rounded-lg shadow-sm">
@@ -326,7 +324,7 @@ export default function JobDetails() {
   <ul className="space-y-3 text-slate-700">
     <li className="flex items-start">
       <span className="inline-block w-2 h-2 bg-slate-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-      <span><strong>Opening:</strong> Begin with a courteous greeting: "Good morning, I came across your [job role] position on DirectNaukri platform."</span>
+      <span><strong>Opening:</strong> Begin with a courteous greeting: Good morning, I came across your [job role] position on DirectNaukri platform.</span>
     </li>
     <li className="flex items-start">
       <span className="inline-block w-2 h-2 bg-slate-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -338,7 +336,7 @@ export default function JobDetails() {
     </li>
     <li className="flex items-start">
       <span className="inline-block w-2 h-2 bg-slate-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-      <span><strong>Closing:</strong> Express gratitude: "Thank you for taking the time to speak with me."</span>
+      <span><strong>Closing:</strong> Express gratitude: Thank you for taking the time to speak with me.</span>
     </li>
   </ul>
 </div>

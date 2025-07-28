@@ -231,7 +231,7 @@ export default function FeedbackPage() {
                   return itemDate.toDateString() === today.toDateString();
                 }).length}
               </div>
-              <div className="text-sm text-purple-700">Today's Submissions</div>
+              <div className="text-sm text-purple-700">Today Submissions</div>
             </div>
           </div>
         </div>
@@ -241,7 +241,7 @@ export default function FeedbackPage() {
           <div className="flex flex-col lg:flex-row gap-4">
             {/* Search */}
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <Search className="absolute text-black left-3 top-1/2 transform -translate-y-1/2 " size={20} />
               <input
                 type="text"
                 placeholder="Search by HR details, candidate name, or job title..."
@@ -254,7 +254,7 @@ export default function FeedbackPage() {
             {/* Filter Toggle */}
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2 px-4 py-3 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+              className="flex text-black items-center gap-2 px-4 py-3 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
             >
               <Filter size={16} />
               Filters
@@ -273,7 +273,7 @@ export default function FeedbackPage() {
                   <select
                     value={dateFilter}
                     onChange={(e) => setDateFilter(e.target.value)}
-                    className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full p-3 border border-gray-200 text-black rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   >
                     <option value="all">All Time</option>
                     <option value="today">Today</option>
@@ -283,7 +283,7 @@ export default function FeedbackPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-black mb-2">
                     Status
                   </label>
                   <select
@@ -350,7 +350,7 @@ export default function FeedbackPage() {
               <p className="text-gray-600">
                 {searchTerm || dateFilter !== "all" || statusFilter !== "all" 
                   ? "Try adjusting your filters to see more results."
-                  : "No feedback submissions yet. Check back later."}
+                  : "No feedback submissions. Check back later."}
               </p>
             </div>
           ) : (
@@ -416,14 +416,14 @@ export default function FeedbackPage() {
                               <Briefcase className="w-4 h-4 text-gray-400" />
                               <span className="text-sm font-medium text-gray-700">DirectNaukri Job</span>
                             </div>
-                            <p className="text-gray-900 break-words">{item.directNaukriJob || "Not specified"}</p>
+                            <p className="text-gray-900 break-words">{item.hiredFromPlatform || "Not specified"}</p>
                           </div>
                         </div>
 
                         <div className="flex items-center justify-between text-xs text-gray-500">
                           <div className="flex items-center gap-2">
                             <Calendar className="w-4 h-4" />
-                            <span>Submitted on: {new Date(item.createdAt).toLocaleString()}</span>
+                            <span>Submitted on: {new Date(item.submittedAt).toLocaleString()}</span>
                           </div>
                           <div className="flex items-center gap-1">
                             <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
