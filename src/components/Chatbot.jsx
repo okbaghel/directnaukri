@@ -258,10 +258,10 @@ export default function SalaryIncreaseChatbot() {
                   <IndianRupee size={20} className="text-white" />
                 </div>
                 <div>
-                  <h2 className="font-semibold text-lg md:text-xl text-white">Salary Assistant</h2>
+                  <h2 className="font-semibold text-lg md:text-xl text-white">DirectNaukri Salary Booster</h2>
                   <div className="flex items-center gap-2 text-white/80 text-sm">
                     <Shield size={12} />
-                    <span>DirectNaukri Professional</span>
+                    <span>हम आपकी सैलरी बढ़वा सकते हैं</span>
                   </div>
                 </div>
               </div>
@@ -362,120 +362,36 @@ export default function SalaryIncreaseChatbot() {
         </div>
       )}
 
-      {/* Professional Floating Button with Success Stories */}
-      <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50">
-        <div className="relative group">
+      {/* /* Professional Floating Button with Success Stories  */}
+    {/* /* Premium Floating Button */} */
+      <div className="fixed bottom-6 right-6 z-50">
+        <div className="relative">
+          {/* Glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-600 rounded-full blur-xl opacity-60 animate-pulse"></div>
           
-          {/* Professional tooltip with success metrics */}
-          {showTooltip && !open && (
-            <div className="absolute bottom-full right-0 mb-4 w-72 md:w-80 bg-white rounded-xl shadow-2xl border border-gray-200 p-4 transform transition-all duration-300 animate-slide-up">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <TrendingUp size={16} className="text-green-600" />
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-800 text-sm">Salary वृद्धि सेवा</div>
-                  <div className="text-xs text-gray-500">Professional Career Growth</div>
-                </div>
-              </div>
-              
-              <div className="space-y-2 mb-3">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-gray-600">• Fields Jobs</span>
-                  <span className="font-semibold text-green-600">avg +32%</span>
-                </div>
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-gray-600">• Marketing Jobs</span>
-                  <span className="font-semibold text-green-600">avg +28%</span>
-                </div>
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-gray-600">• Security</span>
-                  <span className="font-semibold text-green-600">avg +35%</span>
-                </div>
-              </div>
-              
-              <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                <div className="flex items-center gap-1 text-xs text-gray-500">
-                  <CheckCircle size={12} className="text-green-500" />
-                  <span>99% Chance</span>
-                </div>
-                <button 
-                  onClick={() => {setOpen(true); setShowTooltip(false);}}
-                  className="text-xs bg-slate-600 text-white px-3 py-1 rounded-full hover:bg-slate-700 transition-colors"
-                >
-                  शुरू करें
-                </button>
-              </div>
-              
-              <div className="absolute top-full right-6 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
-            </div>
-          )}
-
-          {/* Floating text above circle */}
-          {!open && (
-            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white px-4 py-2 rounded-xl shadow-lg animate-bounce pointer-events-none"
-                 style={{
-                   boxShadow: '0 0 20px rgba(16, 185, 129, 0.5), 0 0 40px rgba(34, 197, 94, 0.3)',
-                   animationDuration: '2s'
-                 }}>
-              <div className="text-center">
-                <div className="text-sm font-bold leading-tight drop-shadow-lg">
-                  Salary बढवाए
-                </div>
-              
-              </div>
-              {/* Arrow pointing down */}
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-6 border-transparent border-t-emerald-500"></div>
-            </div>
-          )}
-
-          {/* Multiple glowing rings for maximum attraction */}
-          <div className="absolute inset-0 rounded-full">
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-full animate-ping opacity-40"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse blur-md opacity-50" style={{animationDelay: '0.5s'}}></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-green-500 rounded-full animate-ping blur-lg opacity-30" style={{animationDelay: '1s'}}></div>
-          </div>
-
-          {/* Glowing circular button */}
+          {/* Main button */}
           <button
             onClick={() => setOpen(!open)}
-            onMouseEnter={() => !open && setShowTooltip(true)}
-            onMouseLeave={() => setShowTooltip(false)}
-            className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-emerald-500 via-green-600 to-emerald-700 hover:from-emerald-600 hover:via-green-700 hover:to-emerald-800 text-white rounded-full shadow-2xl shadow-emerald-400/60 hover:shadow-emerald-500/80 transition-all duration-300 hover:scale-110 active:scale-95 border-2 border-emerald-300/50 group overflow-hidden flex items-center justify-center"
-            style={{
-              boxShadow: '0 0 30px rgba(16, 185, 129, 0.4), 0 0 60px rgba(34, 197, 94, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.1)'
-            }}
+            className="relative bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-700 hover:to-purple-800 text-white p-4 lg:p-5 rounded-full shadow-2xl shadow-indigo-300 hover:shadow-indigo-400 hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/20 backdrop-blur-sm"
           >
-            {/* Multi-layer shimmer effects */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-full"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-200/30 to-transparent translate-x-full group-hover:-translate-x-full transition-transform duration-1200 rounded-full"></div>
-            
-            {/* Inner glow */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-400/20 to-green-500/20 animate-pulse"></div>
-            
-            {/* Icon */}
-            <div className="relative z-10">
-              {open ? (
-                <X size={24} className="md:w-8 md:h-8 drop-shadow-lg" />
-              ) : (
-                <IndianRupee size={28} className="md:w-10 md:h-10 animate-bounce text-white drop-shadow-lg" />
-              )}
-            </div>
+            {open ? <X size={24} /> : <TrendingUp size={24} />}
           </button>
-
-          {/* Enhanced floating money emojis with glow */}
-      
-
-          {/* Glowing notification badge */}
+          
+          {/* Notification badge */}
           {!open && (
-            <div className="absolute -top-2 -right-2 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs md:text-sm font-bold rounded-full flex items-center justify-center shadow-2xl animate-pulse border-2 border-white backdrop-blur-sm"
-                 style={{
-                   boxShadow: '0 0 20px rgba(239, 68, 68, 0.6), 0 0 40px rgba(249, 115, 22, 0.4)'
-                 }}>
-              🔥
+            <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-red-500 to-pink-600 text-white text-xs font-bold rounded-full flex items-center justify-center shadow-lg animate-bounce border-2 border-white">
+              💰
             </div>
           )}
         </div>
+        
+        {/* Tooltip */}
+        {!open && (
+          <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg shadow-lg opacity-0 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+            Salary बढ़ाएं! 🚀
+            <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+          </div>
+        )}
       </div>
 
       <style jsx>{`

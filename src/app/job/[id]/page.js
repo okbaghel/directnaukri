@@ -199,7 +199,7 @@ export default function JobDetails() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                       </svg>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-blue-900">Unlock Premium Features</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-blue-900">Benifits With Us</h3>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -226,7 +226,7 @@ export default function JobDetails() {
                       href={`/subscribe?job=${job._id}`}
                       className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200"
                     >
-                    See Full Job + Support - ₹99
+                    One Click to Get Benefits
                       <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -352,7 +352,7 @@ export default function JobDetails() {
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold mb-2">Premium Access</h3>
+                    <h3 className="text-xl font-bold mb-2">Time-Saving Tools Activated</h3>
                     <p className="text-gray-300">Unlock all jobs details</p>
                   </div>
 
@@ -383,7 +383,7 @@ export default function JobDetails() {
                     href={`/subscribe?job=${job._id}`}
                     className="block w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 px-4 rounded-lg font-bold text-center transition-all duration-200"
                   >
-                    Unlock HR Access – ₹99
+                    One Click To Unlock HR Access – ₹99
                   </Link>
                 </div>
               </div>

@@ -251,17 +251,16 @@ export default function JobCard({ job }) {
             <div className="min-w-0">
               <p className="text-xs font-medium text-yellow-800 mb-1">
                 <span className="hidden sm:inline">
-                  Stay Safe While Job Hunting
+                   100% Safe & Verified Jobs
                 </span>
-                <span className="sm:hidden">Stay Safe</span>
+                <span className="sm:hidden">Safe & Verified Jobs</span>
               </p>
               <p className="text-xs text-yellow-700 leading-relaxed">
                 <span className="hidden sm:inline">
-                  Never pay fees or share sensitive personal information during
-                  the application process.
+               We verify all listings. No fees, no scams — just real, trusted job opportunities.
                 </span>
                 <span className="sm:hidden">
-                  Never pay fees or share sensitive info when applying.
+                 No charges, no scams — only trusted jobs.
                 </span>
               </p>
             </div>
