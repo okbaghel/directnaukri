@@ -3,10 +3,10 @@ import JobsContent from "./JobsContent";
 
 export default function JobsPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="bg-white shadow-sm border-b">
+    <div className="min-h-screen bg-gray-50 ">
+      <div className="bg-white shadow-sm border-b ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center">
+          <div className="text-center mt-11">
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
               Find Your Next Opportunity
             </h1>

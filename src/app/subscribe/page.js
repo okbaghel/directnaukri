@@ -144,7 +144,7 @@ if (result.success) {
       closeAlert();
     }
     router.push("/jobs"); // Use Next.js router instead of location.href
-  }, 5000);
+  }, 4000);
 } else {
   showErrorAlert();
 }
@@ -184,9 +184,7 @@ if (result.success) {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
               Unlock Premium <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Job Access</span>
             </h1>
-            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Get direct access to employer contacts, apply instantly, and accelerate your career growth
-            </p>
+           
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
@@ -267,14 +265,7 @@ if (result.success) {
                         </div>
                         <span className="text-sm font-medium text-slate-700">Direct Contacts</span>
                       </div>
-                      <div className="flex items-center space-x-3 p-3 bg-slate-50 rounded-lg">
-                        <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                          <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                          </svg>
-                        </div>
-                        <span className="text-sm font-medium text-slate-700">Instant Apply</span>
-                      </div>
+                     
                       <div className="flex items-center space-x-3 p-3 bg-slate-50 rounded-lg">
                         <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
                           <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -309,7 +300,7 @@ if (result.success) {
                         Processing Payment...
                       </span>
                     ) : (
-                      "Get Premium Access - Pay ₹99"
+                      "Payment ₹99 "
                     )}
                   </button>
 

@@ -54,12 +54,12 @@ export default function JobDetails() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 ">
       {/* Professional Header */}
-      <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white">
+      <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white ">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           {/* Breadcrumb */}
-          <nav className="flex items-center space-x-2 text-blue-200 text-sm mb-6">
+          <nav className="flex items-center space-x-2 text-blue-200 text-sm mb-6 mt-11">
             <Link href="/jobs" className="hover:text-white transition-colors duration-200">
               Jobs
             </Link>
@@ -199,7 +199,7 @@ export default function JobDetails() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                       </svg>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-blue-900">Benifits With Us</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-blue-900">View HR Details</h3>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -226,7 +226,7 @@ export default function JobDetails() {
                       href={`/subscribe?job=${job._id}`}
                       className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200"
                     >
-                   All Job HR Contacts for ₹99/month
+                   Pay now ₹99
                       <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
@@ -378,10 +378,13 @@ export default function JobDetails() {
                     ))}
                   </div>
 
+                     <Link  href={`/subscribe?job=${job._id}`}>
                   <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg p-4 mb-6 text-center">
-                    <div className="text-2xl font-bold">₹99</div>
+                   
+                    <div className="text-2xl font-bold">Pay ₹99</div>
                     <div className="text-sm">per month</div>
                   </div>
+                  </Link>
 
                   <Link
                     href={`/subscribe?job=${job._id}`}
